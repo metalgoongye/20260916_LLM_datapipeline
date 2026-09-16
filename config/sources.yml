@@ -16,6 +16,21 @@ sources:
               prdSe: Y, startPrdDe: "2015", endPrdDe: "2025", format: json, jsonVD: "Y" }
     sample: raw/sample/kosis_tfr.json
 
+  - id: kosis_births
+    name: KOSIS 인구동향조사 — 시도/출생아수
+    kind: api
+    indicator_code: BIRTHS
+    unit: 명
+    vintage: 확정
+    region_level: 시도
+    endpoint: https://kosis.kr/openapi/Param/statisticsParameterData.do
+    auth: { required: true, param: apiKey, env: KOSIS_API_KEY }
+    # objL1 을 ALL 로 두면 시군구 264개가 함께 옵니다. 시도 2자리 코드만 명시합니다.
+    params: { method: getList, orgId: "101", tblId: DT_1B81A01, itmId: T1,
+              objL1: "00+11+21+22+23+24+25+26+29+31+32+33+34+35+36+37+38+39",
+              prdSe: Y, startPrdDe: "2015", endPrdDe: "2025", format: json, jsonVD: "Y" }
+    sample: raw/sample/kosis_births.json
+
   - id: wb_tfr
     name: World Bank — Fertility rate, total
     kind: api
@@ -38,7 +53,7 @@ sources:
     sample: raw/sample/policy_brief.json
 
 validation:
-  value_range: { TFR: [0, 3], SP.DYN.TFRT.IN: [0, 8], POLICY_COUNT: [0, 500] }
+  value_range: { TFR: [0, 3], BIRTHS: [0, 500000], SP.DYN.TFRT.IN: [0, 8], POLICY_COUNT: [0, 500] }
   expected_regions_시도: 17
   expected_years: [2015, 2025]
   yoy_change_limit: 0.30
