@@ -1,5 +1,5 @@
 ---
-name: policy-data-pipeline
+name: policy-data-pipeline-main
 description: 국내외 공공·국제기구 통계를 수집해 표준 스키마 패널로 정리하고, 검증·코드북·대시보드까지 자동 생성하는 정책연구용 데이터 파이프라인. KOSIS, 공공데이터포털, World Bank, OECD, Eurostat에서 지표를 가져오라는 요청, 기존 패널에 지표나 연도를 추가하라는 요청, 수집 데이터의 정합성을 검증하거나 코드북을 갱신하라는 요청, 정기 갱신을 실행하라는 요청에 사용한다.
 ---
 

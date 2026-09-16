@@ -3,6 +3,10 @@
     "korean-stat": {
       "command": "korean-stat-mcp",
       "env": { "KOSIS_API_KEY": "${KOSIS_API_KEY}" }
+    },
+    "korean-law": {
+      "command": "korean-law-mcp",
+      "env": { "OPEN_LAW_ID": "${OPEN_LAW_ID}" }
     }
   }
 }
