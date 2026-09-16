@@ -1,11 +1,11 @@
 {
   "mcpServers": {
     "korean-stat": {
-      "command": "korean-stat-mcp",
+      "command": ".venv/Scripts/korean-stat-mcp.exe",
       "env": { "KOSIS_API_KEY": "${KOSIS_API_KEY}" }
     },
     "korean-law": {
-      "command": "korean-law-mcp",
+      "command": ".venv/Scripts/korean-law-mcp.exe",
       "env": { "OPEN_LAW_ID": "${OPEN_LAW_ID}" }
     }
   }
